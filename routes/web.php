@@ -16,5 +16,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/resorts', 'ResortController@index')->name('resorts.index');
 Route::get('/add-resort', 'ResortController@create')->name('resorts.create');
-Route::get('/map', 'MapController@index')->name('map');
+Route::post('/add-resort', 'ResortController@store')->name('resorts.store');
 

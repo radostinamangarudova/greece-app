@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Resort extends Model
 {
     protected $fillable = [
-        'name', 'location', 'image', 'desc',
+        'name', 'image', 'desc', 'latitude', 'longitude'
     ];
+
+    public $timestamps = false;
 
     public function getDescCutOutAttribute()
     {

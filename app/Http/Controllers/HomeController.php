@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $resorts = Resort::all();
+        $resorts = Resort::orderBy('name')->limit(4)->get();
         return view('home', compact('resorts'));
     }
 }

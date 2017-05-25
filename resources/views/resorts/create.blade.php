@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rmangarudova
- * Date: 23.05.17
- * Time: 14:04
- */
+@extends('layouts.app')
+
+@section('content')
+
+    @include('resorts._form')
+
+    @endsection

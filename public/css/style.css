@@ -1195,5 +1195,8 @@ ul.social-network li a {
     width: 350px;
     height: 250px;
 }
+.longitude, .latitude {
+    visibility: hidden;
+}
 
 

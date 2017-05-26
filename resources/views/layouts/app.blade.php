@@ -25,6 +25,9 @@
             @yield('content')
     </div>
 
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzE4HR3HEWc-1Y_r25SOcaMgsvUQ2PPvc&callback=initMap&libraries=places">
+    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

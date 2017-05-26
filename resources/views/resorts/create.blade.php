@@ -4,4 +4,4 @@
 
     @include('resorts._form')
 
-    @endsection
+@endsection

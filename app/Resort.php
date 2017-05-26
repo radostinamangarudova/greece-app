@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Resort extends Model
 {
+
     protected $fillable = [
         'name', 'image', 'desc', 'latitude', 'longitude'
     ];
@@ -17,4 +19,15 @@ class Resort extends Model
         return str_limit($this->desc, 100);
     }
 
+    public function getResortImageAttribute()
+    {
+        if(filter_var($this->image, FILTER_VALIDATE_URL) === false)
+        {
+            $path = 'img/' . $this->image;
+            return $path = 'img/' . $this->image;
+        }
+
+        return $this->image;
+
+    }
 }

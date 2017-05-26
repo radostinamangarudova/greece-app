@@ -17,4 +17,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/resorts', 'ResortController@index')->name('resorts.index');
 Route::get('/add-resort', 'ResortController@create')->name('resorts.create');
 Route::post('/add-resort', 'ResortController@store')->name('resorts.store');
+Route::get('/resort/{id}', 'ResortController@show')->name('resorts.show');
+Route::delete('/resort/{id}', 'ResortController@destroy')->name('resorts.destroy');
 

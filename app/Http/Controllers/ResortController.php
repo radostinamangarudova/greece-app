@@ -6,6 +6,7 @@ use Image;
 use App\Resort;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Contracts\Filesystem\FileNotFoundException as FileNotFoundException;
 
 class ResortController extends Controller
 {
@@ -40,19 +41,39 @@ class ResortController extends Controller
 
         if(Input::file())
         {
+            try {
 
-            $image = Input::file('image');
-            $filename  = time() . '.' . $image->getClientOriginalExtension();
+                $image = Input::file('image');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
 
-            $path = public_path('img/' . $filename);
+                $path = public_path('img/' . $filename);
 
 
-            Image::make($image->getRealPath())->save($path);
-            $newResort->image = $filename;
+                Image::make($image->getRealPath())->save($path);
+                $newResort->image = $filename;
+            } catch (FileNotFoundException $e) {
+                return back()->withInput();
+            }
         }
 
         $newResort->save();
 
         return Redirect::route('resorts.index');
+    }
+
+    public function show($id)
+    {
+        $resort = Resort::findOrFail($id);
+
+        return view('resorts.show', compact('resort'));
+    }
+
+    public function destroy($id)
+    {
+        $resort = Resort::find($id);
+
+        $resort->delete();
+
+        return view('resorts.index');
     }
 }

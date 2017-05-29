@@ -17,8 +17,8 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{asset('css/animate.min.css')}}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
+<body id="app">
+    <div>
         <header id="header">
             @include('partials/_navigation')
         </header><!--/header-->
@@ -31,10 +31,11 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
     <script>wow = new WOW({}).init();</script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

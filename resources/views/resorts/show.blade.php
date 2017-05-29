@@ -10,7 +10,7 @@
                     <h3 class="panel-title">{{$resort->name}}</h3>
                 </div>
                 <div class="panel-body">
-                    <img src="{{ $resort->resort_image }}" alt="image" class="img-responsive"/>
+                    <img src="{{ asset($resort->resort_image) }}" alt="image" class="img-responsive"/>
                     <h4>Описание:</h4>
                     <p>{{$resort->desc}}</p>
                     <button class="btn btn-primary"><a href="{{ URL::previous() }}" style="color: white">Обратно</a></button>
@@ -23,18 +23,6 @@
     </div>
 @endsection
 
-<script>
+@section('scripts')
 
-    window.initMap = function() {
-
-        var map = new google.maps.Map(document.getElementById('map-canvas'), {
-            center: {
-                lat: 27.72,
-                lng: 85.36
-            },
-            zoom: 10
-        });
-    }
-
-</script>
-
+@endsection

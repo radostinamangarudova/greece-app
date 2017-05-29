@@ -23,11 +23,9 @@ class Resort extends Model
     {
         if(filter_var($this->image, FILTER_VALIDATE_URL) === false)
         {
-            $path = 'img/' . $this->image;
-            return $path = 'img/' . $this->image;
+            return 'img/' . $this->image;
         }
 
         return $this->image;
-
     }
 }

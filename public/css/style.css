@@ -20,6 +20,7 @@ body {
 	color:#fff;
 	background-color:#fff;
 	overflow-x:hidden;
+
 }
 
 hi,h2,h3,h4,h5,h6 {
@@ -1086,7 +1087,14 @@ ul.social-network {
 }
 .sub-footer  {
 	background:#272727;
+    margin-bottom: 0px;
 	padding:30px;
+    clear: both;
+    bottom: 0;
+    width:100%;
+    position:relative;
+    left:0;
+
 }
 
 ul.social-network li {
@@ -1186,7 +1194,8 @@ ul.social-network li a {
     background-size: contain;
 }
 
-.resorts h1{
+.resorts h1,
+.info h1{
     color: black;
     margin-bottom: 50px;
 }
@@ -1198,5 +1207,15 @@ ul.social-network li a {
 .longitude, .latitude {
     visibility: hidden;
 }
-
-
+.info{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.info p {
+    color: #0f0f0f;
+    font-size: 16px;
+    text-align: justify;
+}
+.info img {
+    width: 100%;
+}

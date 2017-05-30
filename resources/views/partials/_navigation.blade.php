@@ -19,7 +19,7 @@
                         <li><a href="{{ route('register') }}">Register</a></li>
                     @else
                         <li><a href="{{ route('resorts.index') }}">Курорти</a></li>
-                        <li><a href="#">Информация</a></li>
+                        <li><a href="{{ route('info') }}">Информация</a></li>
                         <li><a href="{{ route('resorts.create') }}">Добави курорт</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">

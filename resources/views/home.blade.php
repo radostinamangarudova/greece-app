@@ -37,7 +37,7 @@
             <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                 <form class="form-inline">
                     <div class="form-group">
-                        <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">ОЩЕ</button>
+                        <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required"><a href="{{route('info')}}">ОЩЕ</a></button>
                     </div>
                 </form>
             </div>
@@ -52,7 +52,7 @@
             <h2>Не виждаш тук своето любимо място за почивка в Гърция?</h2>
             <h5 class="add-resort">С помощта на тази формичка <br>може да ни помогнеш и да добавиш място, което според теб си заслужава</h5>
             <a class="col-md-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-                <a href="#"><img src="img/form.png" class="form-icon"><h3>Добави курорт</h3></a>
+                <a href="{{route('resorts.create')}}"><img src="img/form.png" class="form-icon"><h3>Добави курорт</h3></a>
             </a>
         </div>
     </div>
@@ -60,8 +60,6 @@
 
 
 @include('partials/_footer')
-
-@include('partials/_subfooter')
 
 @endif
 

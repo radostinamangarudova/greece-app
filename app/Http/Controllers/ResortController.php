@@ -71,9 +71,11 @@ class ResortController extends Controller
     public function destroy($id)
     {
         $resort = Resort::find($id);
-
+        $resort_name = $resort->name;
         $resort->delete();
 
-        return view('resorts.index');
+        flash('Вие успешно изтрихте курорта с име '.$resort_name, 'success');
+
+        return redirect()->route('resorts.index');
     }
 }

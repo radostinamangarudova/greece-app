@@ -15,7 +15,8 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
-    <link href="{{asset('css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/zoom.css') }}" rel="stylesheet">
 </head>
 <body id="app">
     <div>
@@ -24,7 +25,6 @@
         </header><!--/header-->
             @yield('content')
     </div>
-    @include('partials/_subfooter')
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzE4HR3HEWc-1Y_r25SOcaMgsvUQ2PPvc&callback=initMap&libraries=places">
@@ -37,6 +37,8 @@
     <script>wow = new WOW({}).init();</script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/zoom.js') }}"></script>
+    <script src="{{ asset('js/transition.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

@@ -1219,3 +1219,11 @@ ul.social-network li a {
 .info img {
     width: 100%;
 }
+.google-map{
+    width: 50%;
+    margin: 0 auto
+}
+.delete {
+    color: black;
+    background-color: #ff4b52;
+}

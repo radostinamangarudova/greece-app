@@ -12,11 +12,14 @@
                 <div class="panel-body">
                     <img src="{{ asset($resort->resort_image) }}" alt="image" class="img-responsive"/>
                     <h4>Описание:</h4>
-                    <p>{{$resort->desc}}</p>
-                    <button class="btn btn-primary"><a href="{{ URL::previous() }}" style="color: white">Обратно</a></button>
-                    {!! Form::model($resort, ['route' => ['resorts.destroy', $resort->id], 'method' => 'delete']) !!}
-                    <button type="submit" class="btn btn-danger">Изтрий</button>
-                    {!! Form::close() !!}
+                    <p class="desc">{{$resort->desc}}</p>
+                    <h4>Местоположение: </h4>
+                    <div id="map-canvas" class="google-map"></div>
+                        <button class="btn btn-primary"><a href="{{ URL::previous() }}" >Обратно</a></button>
+                        {!! Form::model($resort, ['route' => ['resorts.destroy', $resort->id], 'method' => 'delete']) !!}
+                        <button type="submit" class="btn delete">Изтрий</button>
+                        {!! Form::close() !!}
+
                 </div>
             </div>
         </div>
@@ -24,5 +27,28 @@
 @endsection
 
 @section('scripts')
+    <script>
+        $(function initMap() {
+            var longitude = '<?php echo $resort->longitude ?>';
+            var latitude = '<?php echo $resort->latitude ?>';
+            var map = new google.maps.Map(document.getElementById('map-canvas'), {
+                center: {
+                    lat: Number(latitude),
+                    lng: Number(longitude)
+                },
+                zoom: 10
+            });
 
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: Number(latitude),
+                    lng: Number(longitude)
+                },
+                map: map,
+                draggable: false
+            });
+
+        })
+
+    </script>
 @endsection

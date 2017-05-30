@@ -60,7 +60,7 @@
 
 
 @include('partials/_footer')
-
+        @include('partials/_subfooter')
 @endif
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

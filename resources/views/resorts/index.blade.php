@@ -3,6 +3,7 @@
 @section('content')
     <div class="resorts">
         <div class="container">
+            @include('flash::message')
             <div class="text-center">
                 <h1>КУРОРТИ</h1>
             </div>

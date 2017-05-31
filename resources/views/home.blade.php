@@ -37,7 +37,7 @@
             <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                 <form class="form-inline">
                     <div class="form-group">
-                        <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required"><a href="{{route('info')}}">ОЩЕ</a></button>
+                        <button class="btn btn-primary btn-lg"><a href="{{route('info')}}">ОЩЕ</a></button>
                     </div>
                 </form>
             </div>

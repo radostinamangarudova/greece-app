@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Image;
+use Illuminate\Support\Facades\Auth;
 use App\Resort;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -37,6 +38,9 @@ class ResortController extends Controller
     {
         $data = Input::all();
 
+        $userId = Auth::user()->id;
+
+
         $newResort = new Resort($data);
 
         if(Input::file())
@@ -48,15 +52,17 @@ class ResortController extends Controller
 
                 $path = public_path('img/' . $filename);
 
-
                 Image::make($image->getRealPath())->save($path);
                 $newResort->image = $filename;
+                $newResort->author_id = $userId;
+
             } catch (FileNotFoundException $e) {
                 return back()->withInput();
             }
         }
 
         $newResort->save();
+        flash('Вие успешно добавихте курорт с име '.$newResort->name, 'success');
 
         return Redirect::route('resorts.index');
     }
@@ -71,11 +77,31 @@ class ResortController extends Controller
     public function destroy($id)
     {
         $resort = Resort::find($id);
-        $resort_name = $resort->name;
-        $resort->delete();
 
-        flash('Вие успешно изтрихте курорта с име '.$resort_name, 'success');
+        if($resort->author_id == Auth::user()->id) {
+            $resort->delete();
 
+            flash('Вие успешно изтрихте курорта с име ' . $resort->name, 'success');
+        }
+
+        else{
+            flash('Не може да изтрието този курорт, тъй като той е добавен от друг потребител.' , 'danger');
+        }
         return redirect()->route('resorts.index');
+
+    }
+
+    public function edit($id)
+    {
+        $resort = Resort::findOrFail($id);
+        return view('resorts.edit', compact('resort'));
+    }
+
+    public function update($id, array $data)
+    {
+        $resort = $this->find($id);
+        $resort->update($data);
+        $resort->facilities()->sync($data['facilities']);
+        $resort->save();
     }
 }

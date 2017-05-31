@@ -2,6 +2,7 @@
 
 namespace App;
 
+use User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +10,7 @@ class Resort extends Model
 {
 
     protected $fillable = [
-        'name', 'image', 'desc', 'latitude', 'longitude'
+        'name', 'image', 'desc', 'latitude', 'longitude', 'author_id'
     ];
 
     public $timestamps = false;
@@ -27,5 +28,10 @@ class Resort extends Model
         }
 
         return $this->image;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

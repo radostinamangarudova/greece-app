@@ -5,9 +5,9 @@
         <div class="text-center">
             <h1>ЗА ГРЪЦКИТЕ ОСТРОВИ</h1>
         </div>
-        <div class="col-md-3 pull-left"><img src="{{asset('img/18753_1.jpg')}}" data-action="zoom">
+        <div class="col-md-3 pull-left"><img src="{{asset('img/18753_1.jpg')}}" data-action="zoom" class="img-responsive">
             <hr>
-            <img src="{{asset('img/18753_2.jpg')}}" data-action="zoom"></div>
+            <img src="{{asset('img/18753_2.jpg')}}" data-action="zoom" class="img-responsive"></div>
         <div class="col-md-6">
             <p>Гръцките острови винаги са били на челно място в списъка на топ дестинациите.Със своите 227 населени острова (от общо 1400), разпръснати в тюркоазените води на три морета (Егейско, Йонийско и Средиземно),
 Гърция става една от първите дестинации за масов туризъм преди няколко десетилетия. Благодарение на нестихващия интерес
@@ -24,9 +24,9 @@
         дестинация почти невъзможен.
         </p>
         </div>
-        <div class="col-md-3 pull-right"><img src="{{asset('img/18753_3.jpg')}}" data-action="zoom">
+        <div class="col-md-3 pull-right"><img src="{{asset('img/18753_3.jpg')}}" data-action="zoom" class="img-responsive">
         <hr>
-            <img src="{{asset('img/18753_4.jpg')}}" data-action="zoom"></div>
+            <img src="{{asset('img/18753_4.jpg')}}" data-action="zoom" class="img-responsive"></div>
 
     </div>
     @endsection

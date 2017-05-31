@@ -16,10 +16,15 @@
                     <h4>Местоположение: </h4>
                     <div id="map-canvas" class="google-map"></div>
                         <button class="btn btn-primary"><a href="{{ URL::previous() }}" >Обратно</a></button>
+                        @if ($resort->author_id == Auth::user()->id)
                         {!! Form::model($resort, ['route' => ['resorts.destroy', $resort->id], 'method' => 'delete']) !!}
                         <button type="submit" class="btn delete">Изтрий</button>
                         {!! Form::close() !!}
+                            @endif
 
+                    <a href = "{{ route('resorts.edit', ['id' => $resort->id]) }}" title="Edit">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>

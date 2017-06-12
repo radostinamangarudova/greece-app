@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterResortsTableAddAuthorIdColumn extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AlterResortsTableAddAuthorIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('resorts', function ($table){
-            $table->integer('author_id');
+        Schema::create('images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('image_name');
+            $table->integer('resort_id');
         });
     }
 
@@ -25,8 +27,6 @@ class AlterResortsTableAddAuthorIdColumn extends Migration
      */
     public function down()
     {
-        Schema::table('resorts', function($table) {
-            $table->dropColumn('author_id');
-        });
+        Schema::dropIfExists('images');
     }
 }

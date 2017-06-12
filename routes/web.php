@@ -24,3 +24,4 @@ Route::get('information', function (){
 })->name('info');
 Route::get('resort/edit/{id}', 'ResortController@edit')->name('resorts.edit');
 Route::put('resort/{id}/update', 'ResortController@update')->name('resorts.update');
+Route::post('upload-images', 'ResortController@uploadImages');

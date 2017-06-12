@@ -17,6 +17,7 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/zoom.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css" rel="stylesheet">
 </head>
 <body id="app">
     <div>
@@ -26,9 +27,6 @@
             @yield('content')
     </div>
 
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzE4HR3HEWc-1Y_r25SOcaMgsvUQ2PPvc&callback=initMap&libraries=places">
-    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -39,6 +37,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/zoom.js') }}"></script>
     <script src="{{ asset('js/transition.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
     @yield('scripts')
 </body>
 </html>

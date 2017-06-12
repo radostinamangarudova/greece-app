@@ -41,7 +41,8 @@
                         <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Тук</button>
+                                    <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">
+                                        <a href="{{ route('info') }}">Тук</a></button>
                                 </div>
                             </form>
                         </div>
@@ -61,7 +62,8 @@
                         <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Добави курорт</button>
+                                    <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">
+                                        <a href="{{ route('resorts.create') }}">Добави от тук</a></button>
                                 </div>
                             </form>
                         </div>

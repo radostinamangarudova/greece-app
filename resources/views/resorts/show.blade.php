@@ -15,16 +15,16 @@
                     <p class="desc">{{$resort->desc}}</p>
                     <h4>Местоположение: </h4>
                     <div id="map-canvas" class="google-map"></div>
+                    <h4>Галерия</h4>
+                    @foreach($resort->images as $image)
+                        <img src="{{$image->image_name}}" alt="image" class="img-responsive" data-action="zoom" style="width: 50%; height: 100%;"/>
+                    @endforeach
                         <button class="btn btn-primary"><a href="{{ URL::previous() }}" >Обратно</a></button>
                         @if ($resort->author_id == Auth::user()->id)
                         {!! Form::model($resort, ['route' => ['resorts.destroy', $resort->id], 'method' => 'delete']) !!}
                         <button type="submit" class="btn delete">Изтрий</button>
                         {!! Form::close() !!}
                             @endif
-
-                    <a href = "{{ route('resorts.edit', ['id' => $resort->id]) }}" title="Edit">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -32,6 +32,10 @@
 @endsection
 
 @section('scripts')
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzE4HR3HEWc-1Y_r25SOcaMgsvUQ2PPvc&callback=initMap&libraries=places">
+    </script>
+
     <script>
         $(function initMap() {
             var longitude = '<?php echo $resort->longitude ?>';

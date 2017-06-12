@@ -3,6 +3,10 @@
     {!! Form::text( 'name', $resort->name, ['class' => 'form-control', 'placeholder' => 'Enter a resort name.'] ) !!}
 </div>
 <div class="form-group">
+    <label>Add more pictures...</label>
+    <form action="{{ url('img')}}" class="dropzone" id="my-awesome-dropzone"></form>
+</div>
+<div class="form-group">
     {!! Form::label( 'image', null, ['class' => 'control-label'] ) !!}
     {!! Form::file( 'image') !!}
 </div>
@@ -29,7 +33,6 @@
     {!! Form::submit('Save',
       array('class'=>'btn btn-sm btn-default')) !!}
 </div>
-
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzE4HR3HEWc-1Y_r25SOcaMgsvUQ2PPvc&callback=initMap&libraries=places">

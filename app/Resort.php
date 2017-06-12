@@ -3,7 +3,7 @@
 namespace App;
 
 use User;
-use Illuminate\Support\Facades\Storage;
+use App\Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Resort extends Model
@@ -33,5 +33,10 @@ class Resort extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 }

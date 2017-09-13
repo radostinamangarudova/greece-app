@@ -3,10 +3,6 @@
     {!! Form::text( 'name', $resort->name, ['class' => 'form-control', 'placeholder' => 'Enter a resort name.'] ) !!}
 </div>
 <div class="form-group">
-    <label>Add more pictures...</label>
-    <form action="{{ url('img')}}" class="dropzone" id="my-awesome-dropzone"></form>
-</div>
-<div class="form-group">
     {!! Form::label( 'image', null, ['class' => 'control-label'] ) !!}
     {!! Form::file( 'image') !!}
 </div>

@@ -104,9 +104,4 @@ class ResortController extends Controller
         $resort->facilities()->sync($data['facilities']);
         $resort->save();
     }
-
-    public function uploadImages()
-    {
-
-    }
 }

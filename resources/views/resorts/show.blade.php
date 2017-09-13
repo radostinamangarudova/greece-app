@@ -5,11 +5,11 @@
     <div class="container">
         <div class="col-md-3"></div>
         <div class="col-md-6" style="text-align: center">
-            <div class="panel panel-primary">
-                <div class="panel-heading text-center">
-                    <h3 class="panel-title">{{$resort->name}}</h3>
-                </div>
-                <div class="panel-body">
+            <div >
+
+                    <h3>{{$resort->name}}</h3>
+
+
                     <img src="{{ asset($resort->resort_image) }}" alt="image" class="img-responsive"/>
                     <h4>Описание:</h4>
                     <p class="desc">{{$resort->desc}}</p>
@@ -17,7 +17,8 @@
                     <div id="map-canvas" class="google-map"></div>
                     <h4>Галерия</h4>
                     @foreach($resort->images as $image)
-                        <img src="{{$image->image_name}}" alt="image" class="img-responsive" data-action="zoom" style="width: 50%; height: 100%;"/>
+
+                        <img src="{{$image->image_name}}" alt="image" class="img-responsive" data-action="zoom" style="width: 50%; height: 100%; margin-bottom: 10px;"/>
                     @endforeach
                         <button class="btn btn-primary"><a href="{{ URL::previous() }}" >Обратно</a></button>
                         @if ($resort->author_id == Auth::user()->id)
@@ -25,7 +26,7 @@
                         <button type="submit" class="btn delete">Изтрий</button>
                         {!! Form::close() !!}
                             @endif
-                </div>
+
             </div>
         </div>
     </div>

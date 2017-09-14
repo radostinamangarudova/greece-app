@@ -42,7 +42,7 @@
                             <form class="form-inline">
                                 <div class="form-group">
                                     <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">
-                                        <a href="{{ route('info') }}">Тук</a></button>
+                                        <a href="{{route('info')}}">ТУК</a></button>
                                 </div>
                             </form>
                         </div>

@@ -15,18 +15,52 @@
                     <p class="desc">{{$resort->desc}}</p>
                     <h4>Местоположение: </h4>
                     <div id="map-canvas" class="google-map"></div>
-                    <h4>Галерия</h4>
-                    @foreach($resort->images as $image)
-
-                        <img src="{{$image->image_name}}" alt="image" class="img-responsive" data-action="zoom" style="width: 50%; height: 100%; margin-bottom: 10px;"/>
-                    @endforeach
+                 
                         <button class="btn btn-primary"><a href="{{ URL::previous() }}" >Обратно</a></button>
                         @if ($resort->author_id == Auth::user()->id)
                         {!! Form::model($resort, ['route' => ['resorts.destroy', $resort->id], 'method' => 'delete']) !!}
                         <button type="submit" class="btn delete">Изтрий</button>
                         {!! Form::close() !!}
                             @endif
+                    <div style="padding-bottom: 100px">
+                        <h4>Ревюта</h4>
+                        @foreach($resort->reviews as $review)
+                        <h6>{{$review->comment}}</h6>
+                        
+                        <div class="detailBox">
+                            <div class="actionBox">
+                                <ul class="commentList">
+                                    <li>
+                                        <div class="commentText">
+                                            <p class=""></p> <span class="date sub-text">on March 5th, 2014</span>
 
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="commenterImage">
+                                          <img src="http://placekitten.com/40/40" />
+                                        </div>
+                                        <div class="commentText">
+                                            <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" placeholder="Your comments" />
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-default">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        @endforeach
+                        @if ($resort->author_id == Auth::user()->id)
+                        <button class="btn btn-primary"><a href="{{ route('reviews.create', ['id' => $resort->id]) }}" >Добави Ревю</a></button>
+                        @endif
+                    </div>
             </div>
         </div>
     </div>

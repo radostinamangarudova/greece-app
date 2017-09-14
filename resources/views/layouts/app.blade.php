@@ -25,6 +25,7 @@
             @include('partials/_navigation')
         </header><!--/header-->
             @yield('content')
+            @include('partials/_subfooter')
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

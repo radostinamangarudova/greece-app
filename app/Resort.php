@@ -35,8 +35,8 @@ class Resort extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function images()
+    public function reviews() 
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Review::class);
     }
 }

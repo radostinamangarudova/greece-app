@@ -25,3 +25,5 @@ Route::get('information', function (){
 Route::get('resort/edit/{id}', 'ResortController@edit')->name('resorts.edit');
 Route::put('resort/{id}/update', 'ResortController@update')->name('resorts.update');
 Route::post('upload-images', 'ResortController@uploadImages');
+Route::get('resort/{id}/add-review', 'ReviewController@create')->name('reviews.create');
+Route::post('resort/{id}/add-review', 'ReviewController@store')->name('reviews.store');

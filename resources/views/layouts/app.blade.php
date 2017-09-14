@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/zoom.css') }}" rel="stylesheet">
@@ -38,6 +39,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/zoom.js') }}"></script>
     <script src="{{ asset('js/transition.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-rating-input.js') }}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
     @yield('scripts')
 </body>

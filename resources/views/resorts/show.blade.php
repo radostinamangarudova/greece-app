@@ -58,7 +58,7 @@
                         </div>
                         @endforeach
                         @if ($resort->author_id == Auth::user()->id)
-                        <button class="btn btn-primary"><a href="{{ route('reviews.create', ['id' => $resort->id]) }}" >Добави Ревю</a></button>
+                        <button class="btn btn-sm btn-default"><a href="{{ route('reviews.create', ['id' => $resort->id]) }}" >Добави Ревю</a></button>
                         @endif
                     </div>
             </div>

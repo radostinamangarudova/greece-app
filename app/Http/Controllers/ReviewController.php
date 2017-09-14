@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\Resort;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ReviewController extends Controller
 {
@@ -21,19 +25,22 @@ class ReviewController extends Controller
         
     }
 
-    public function create()
+    public function create($resort_id)
     {
         $review = $this->getModel();
+        $resortModel = new Resort();
+        $resort = $resortModel->find($resort_id);
+
         
-        return view('reviews.create', compact('review'));
+        return view('reviews.create', compact('review', 'resort'));
     }
 
     public function store($resortId)
     {
-        $data = Input::all();dd($data);
+        $data = Input::all();
 
         $userId = Auth::user()->id;
-        $resortId = $data['resort_id'];
+        $newReview = new Review($data);
         $newReview->user_id = $userId;
         $newReview->resort_id = $resortId;
 

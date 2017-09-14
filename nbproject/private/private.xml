@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/greece-app/resources/views/partials/_slider.blade.php</file>
-            <file>file:/var/www/html/greece-app/composer.json</file>
-            <file>file:/var/www/html/greece-app/resources/views/info.blade.php</file>
-            <file>file:/var/www/html/greece-app/public/css/style.css</file>
-            <file>file:/var/www/html/greece-app/resources/views/home.blade.php</file>
+            <file>file:/var/www/html/greece-app/resources/views/resorts/show.blade.php</file>
+            <file>file:/var/www/html/greece-app/app/Resort.php</file>
+            <file>file:/var/www/html/greece-app/database/migrations/2017_05_19_145931_create_resorts_table.php</file>
+            <file>file:/var/www/html/greece-app/app/Http/Controllers/ReviewController.php</file>
+            <file>file:/var/www/html/greece-app/resources/views/reviews/edit.blade.php</file>
             <file>file:/var/www/html/greece-app/routes/web.php</file>
-            <file>file:/var/www/html/greece-app/config/app.php</file>
+            <file>file:/var/www/html/greece-app/resources/views/reviews/_form.blade.php</file>
+            <file>file:/var/www/html/greece-app/resources/views/reviews/create.blade.php</file>
+            <file>file:/var/www/html/greece-app/database/migrations/2017_09_14_054304_create_table_reviews.php</file>
+            <file>file:/var/www/html/greece-app/app/User.php</file>
         </group>
     </open-files>
 </project-private>

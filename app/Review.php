@@ -12,8 +12,6 @@ class Review extends Model
         'rating', 'comment', 'user_id', 'resort_id'
     ];
 
-    public $timestamps = false;
-
     public function user()
     {
         return $this->belongsTo(User::class);
